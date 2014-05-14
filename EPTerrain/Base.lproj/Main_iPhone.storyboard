@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="EPTViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="md8-zq-wZb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPP-Ko-iQD">
+                                <rect key="frame" x="20" y="518" width="79" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Regenerate">
+                                    <color key="titleColor" red="1" green="0.30672803369732593" blue="0.0069838156436931031" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="regenerateTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Paq-h5-u2u"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.69999999999999996" minValue="0.0" maxValue="1" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7UW-5O-uhK">
+                                <rect key="frame" x="105" y="518" width="197" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="1" green="0.30672803370000001" blue="0.006983815644" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="1" green="0.30672803370000001" blue="0.006983815644" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="roughnessChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="4C7-j7-mMr"/>
+                                </connections>
+                            </slider>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Y2y-AJ-dtd">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7UW-5O-uhK" secondAttribute="trailing" constant="20" symbolic="YES" id="4ED-Z0-295"/>
+                            <constraint firstItem="md8-zq-wZb" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="7Dp-pc-eB7"/>
+                            <constraint firstItem="Y2y-AJ-dtd" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="L7h-jy-ygO"/>
+                            <constraint firstItem="fPP-Ko-iQD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="MX9-tO-Ttc"/>
+                            <constraint firstItem="Y2y-AJ-dtd" firstAttribute="centerX" secondItem="md8-zq-wZb" secondAttribute="centerX" id="PzH-b9-nSp"/>
+                            <constraint firstItem="7UW-5O-uhK" firstAttribute="leading" secondItem="fPP-Ko-iQD" secondAttribute="trailing" constant="8" symbolic="YES" id="Vwr-KK-gAO"/>
+                            <constraint firstItem="Y2y-AJ-dtd" firstAttribute="centerY" secondItem="md8-zq-wZb" secondAttribute="centerY" id="dsp-1l-7LR"/>
+                            <constraint firstItem="md8-zq-wZb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="gZ2-FH-wGF"/>
+                            <constraint firstAttribute="bottom" secondItem="fPP-Ko-iQD" secondAttribute="bottom" constant="20" symbolic="YES" id="msc-wW-5e9"/>
+                            <constraint firstItem="fPP-Ko-iQD" firstAttribute="top" secondItem="7UW-5O-uhK" secondAttribute="top" id="od5-X7-oTE"/>
+                            <constraint firstItem="Y2y-AJ-dtd" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="yK8-AD-cfU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="md8-zq-wZb" id="9k6-L9-OKw"/>
+                        <outlet property="spinner" destination="Y2y-AJ-dtd" id="ChA-rC-3Nk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

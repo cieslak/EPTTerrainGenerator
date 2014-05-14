@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2BC9DF721923CB0600A67A6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC9DF711923CB0600A67A6E /* Foundation.framework */; };
+		2BC9DF741923CB0600A67A6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC9DF731923CB0600A67A6E /* CoreGraphics.framework */; };
+		2BC9DF761923CB0600A67A6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC9DF751923CB0600A67A6E /* UIKit.framework */; };
+		2BC9DF7C1923CB0700A67A6E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2BC9DF7A1923CB0700A67A6E /* InfoPlist.strings */; };
+		2BC9DF7E1923CB0700A67A6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC9DF7D1923CB0700A67A6E /* main.m */; };
+		2BC9DF821923CB0700A67A6E /* EPTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC9DF811923CB0700A67A6E /* EPTAppDelegate.m */; };
+		2BC9DF851923CB0700A67A6E /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BC9DF831923CB0700A67A6E /* Main_iPhone.storyboard */; };
+		2BC9DF881923CB0700A67A6E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BC9DF861923CB0700A67A6E /* Main_iPad.storyboard */; };
+		2BC9DF8B1923CB0700A67A6E /* EPTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC9DF8A1923CB0700A67A6E /* EPTViewController.m */; };
+		2BC9DF8D1923CB0700A67A6E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC9DF8C1923CB0700A67A6E /* Images.xcassets */; };
+		2BC9DF941923CB0700A67A6E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC9DF931923CB0700A67A6E /* XCTest.framework */; };
+		2BC9DF951923CB0700A67A6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC9DF711923CB0600A67A6E /* Foundation.framework */; };
+		2BC9DF961923CB0700A67A6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC9DF751923CB0600A67A6E /* UIKit.framework */; };
+		2BC9DF9E1923CB0700A67A6E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2BC9DF9C1923CB0700A67A6E /* InfoPlist.strings */; };
+		2BC9DFA01923CB0700A67A6E /* EPTerrainTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC9DF9F1923CB0700A67A6E /* EPTerrainTests.m */; };
+		2BC9DFB41924066200A67A6E /* EPTTerrainGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC9DFB11924066200A67A6E /* EPTTerrainGenerator.m */; };
+		2BC9DFB51924066200A67A6E /* generatemap.c in Sources */ = {isa = PBXBuildFile; fileRef = 2BC9DFB21924066200A67A6E /* generatemap.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2BC9DF971923CB0700A67A6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2BC9DF661923CB0600A67A6E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2BC9DF6D1923CB0600A67A6E;
+			remoteInfo = EPTerrain;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2BC9DF6E1923CB0600A67A6E /* EPTerrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPTerrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BC9DF711923CB0600A67A6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2BC9DF731923CB0600A67A6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2BC9DF751923CB0600A67A6E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2BC9DF791923CB0700A67A6E /* EPTerrain-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EPTerrain-Info.plist"; sourceTree = "<group>"; };
+		2BC9DF7B1923CB0700A67A6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2BC9DF7D1923CB0700A67A6E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2BC9DF7F1923CB0700A67A6E /* EPTerrain-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EPTerrain-Prefix.pch"; sourceTree = "<group>"; };
+		2BC9DF801923CB0700A67A6E /* EPTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPTAppDelegate.h; sourceTree = "<group>"; };
+		2BC9DF811923CB0700A67A6E /* EPTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPTAppDelegate.m; sourceTree = "<group>"; };
+		2BC9DF841923CB0700A67A6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		2BC9DF871923CB0700A67A6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		2BC9DF891923CB0700A67A6E /* EPTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPTViewController.h; sourceTree = "<group>"; };
+		2BC9DF8A1923CB0700A67A6E /* EPTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPTViewController.m; sourceTree = "<group>"; };
+		2BC9DF8C1923CB0700A67A6E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2BC9DF921923CB0700A67A6E /* EPTerrainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EPTerrainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BC9DF931923CB0700A67A6E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2BC9DF9B1923CB0700A67A6E /* EPTerrainTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EPTerrainTests-Info.plist"; sourceTree = "<group>"; };
+		2BC9DF9D1923CB0700A67A6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2BC9DF9F1923CB0700A67A6E /* EPTerrainTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPTerrainTests.m; sourceTree = "<group>"; };
+		2BC9DFB01924066200A67A6E /* EPTTerrainGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPTTerrainGenerator.h; sourceTree = "<group>"; };
+		2BC9DFB11924066200A67A6E /* EPTTerrainGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPTTerrainGenerator.m; sourceTree = "<group>"; };
+		2BC9DFB21924066200A67A6E /* generatemap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = generatemap.c; sourceTree = "<group>"; };
+		2BC9DFB31924066200A67A6E /* generatemap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = generatemap.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2BC9DF6B1923CB0600A67A6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BC9DF741923CB0600A67A6E /* CoreGraphics.framework in Frameworks */,
+				2BC9DF761923CB0600A67A6E /* UIKit.framework in Frameworks */,
+				2BC9DF721923CB0600A67A6E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BC9DF8F1923CB0700A67A6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BC9DF941923CB0700A67A6E /* XCTest.framework in Frameworks */,
+				2BC9DF961923CB0700A67A6E /* UIKit.framework in Frameworks */,
+				2BC9DF951923CB0700A67A6E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2BC9DF651923CB0600A67A6E = {
+			isa = PBXGroup;
+			children = (
+				2BC9DF771923CB0700A67A6E /* EPTerrain */,
+				2BC9DF991923CB0700A67A6E /* EPTerrainTests */,
+				2BC9DF701923CB0600A67A6E /* Frameworks */,
+				2BC9DF6F1923CB0600A67A6E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2BC9DF6F1923CB0600A67A6E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2BC9DF6E1923CB0600A67A6E /* EPTerrain.app */,
+				2BC9DF921923CB0700A67A6E /* EPTerrainTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2BC9DF701923CB0600A67A6E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2BC9DF711923CB0600A67A6E /* Foundation.framework */,
+				2BC9DF731923CB0600A67A6E /* CoreGraphics.framework */,
+				2BC9DF751923CB0600A67A6E /* UIKit.framework */,
+				2BC9DF931923CB0700A67A6E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2BC9DF771923CB0700A67A6E /* EPTerrain */ = {
+			isa = PBXGroup;
+			children = (
+				2BC9DF801923CB0700A67A6E /* EPTAppDelegate.h */,
+				2BC9DF811923CB0700A67A6E /* EPTAppDelegate.m */,
+				2BC9DF831923CB0700A67A6E /* Main_iPhone.storyboard */,
+				2BC9DF861923CB0700A67A6E /* Main_iPad.storyboard */,
+				2BC9DF891923CB0700A67A6E /* EPTViewController.h */,
+				2BC9DF8A1923CB0700A67A6E /* EPTViewController.m */,
+				2BC9DF8C1923CB0700A67A6E /* Images.xcassets */,
+				2BC9DF781923CB0700A67A6E /* Supporting Files */,
+				2BC9DFAF1924066200A67A6E /* EPTTerrainGenerator */,
+			);
+			path = EPTerrain;
+			sourceTree = "<group>";
+		};
+		2BC9DF781923CB0700A67A6E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2BC9DF791923CB0700A67A6E /* EPTerrain-Info.plist */,
+				2BC9DF7A1923CB0700A67A6E /* InfoPlist.strings */,
+				2BC9DF7D1923CB0700A67A6E /* main.m */,
+				2BC9DF7F1923CB0700A67A6E /* EPTerrain-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2BC9DF991923CB0700A67A6E /* EPTerrainTests */ = {
+			isa = PBXGroup;
+			children = (
+				2BC9DF9F1923CB0700A67A6E /* EPTerrainTests.m */,
+				2BC9DF9A1923CB0700A67A6E /* Supporting Files */,
+			);
+			path = EPTerrainTests;
+			sourceTree = "<group>";
+		};
+		2BC9DF9A1923CB0700A67A6E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2BC9DF9B1923CB0700A67A6E /* EPTerrainTests-Info.plist */,
+				2BC9DF9C1923CB0700A67A6E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2BC9DFAF1924066200A67A6E /* EPTTerrainGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				2BC9DFB01924066200A67A6E /* EPTTerrainGenerator.h */,
+				2BC9DFB11924066200A67A6E /* EPTTerrainGenerator.m */,
+				2BC9DFB21924066200A67A6E /* generatemap.c */,
+				2BC9DFB31924066200A67A6E /* generatemap.h */,
+			);
+			path = EPTTerrainGenerator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2BC9DF6D1923CB0600A67A6E /* EPTerrain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BC9DFA31923CB0700A67A6E /* Build configuration list for PBXNativeTarget "EPTerrain" */;
+			buildPhases = (
+				2BC9DF6A1923CB0600A67A6E /* Sources */,
+				2BC9DF6B1923CB0600A67A6E /* Frameworks */,
+				2BC9DF6C1923CB0600A67A6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EPTerrain;
+			productName = EPTerrain;
+			productReference = 2BC9DF6E1923CB0600A67A6E /* EPTerrain.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2BC9DF911923CB0700A67A6E /* EPTerrainTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BC9DFA61923CB0700A67A6E /* Build configuration list for PBXNativeTarget "EPTerrainTests" */;
+			buildPhases = (
+				2BC9DF8E1923CB0700A67A6E /* Sources */,
+				2BC9DF8F1923CB0700A67A6E /* Frameworks */,
+				2BC9DF901923CB0700A67A6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2BC9DF981923CB0700A67A6E /* PBXTargetDependency */,
+			);
+			name = EPTerrainTests;
+			productName = EPTerrainTests;
+			productReference = 2BC9DF921923CB0700A67A6E /* EPTerrainTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2BC9DF661923CB0600A67A6E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = EPT;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Electropuf;
+				TargetAttributes = {
+					2BC9DF911923CB0700A67A6E = {
+						TestTargetID = 2BC9DF6D1923CB0600A67A6E;
+					};
+				};
+			};
+			buildConfigurationList = 2BC9DF691923CB0600A67A6E /* Build configuration list for PBXProject "EPTerrain" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2BC9DF651923CB0600A67A6E;
+			productRefGroup = 2BC9DF6F1923CB0600A67A6E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2BC9DF6D1923CB0600A67A6E /* EPTerrain */,
+				2BC9DF911923CB0700A67A6E /* EPTerrainTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2BC9DF6C1923CB0600A67A6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BC9DF881923CB0700A67A6E /* Main_iPad.storyboard in Resources */,
+				2BC9DF8D1923CB0700A67A6E /* Images.xcassets in Resources */,
+				2BC9DF851923CB0700A67A6E /* Main_iPhone.storyboard in Resources */,
+				2BC9DF7C1923CB0700A67A6E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BC9DF901923CB0700A67A6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BC9DF9E1923CB0700A67A6E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2BC9DF6A1923CB0600A67A6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BC9DF821923CB0700A67A6E /* EPTAppDelegate.m in Sources */,
+				2BC9DFB41924066200A67A6E /* EPTTerrainGenerator.m in Sources */,
+				2BC9DF8B1923CB0700A67A6E /* EPTViewController.m in Sources */,
+				2BC9DFB51924066200A67A6E /* generatemap.c in Sources */,
+				2BC9DF7E1923CB0700A67A6E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BC9DF8E1923CB0700A67A6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BC9DFA01923CB0700A67A6E /* EPTerrainTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2BC9DF981923CB0700A67A6E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2BC9DF6D1923CB0600A67A6E /* EPTerrain */;
+			targetProxy = 2BC9DF971923CB0700A67A6E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2BC9DF7A1923CB0700A67A6E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BC9DF7B1923CB0700A67A6E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2BC9DF831923CB0700A67A6E /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BC9DF841923CB0700A67A6E /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		2BC9DF861923CB0700A67A6E /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BC9DF871923CB0700A67A6E /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		2BC9DF9C1923CB0700A67A6E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BC9DF9D1923CB0700A67A6E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2BC9DFA11923CB0700A67A6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2BC9DFA21923CB0700A67A6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2BC9DFA41923CB0700A67A6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EPTerrain/EPTerrain-Prefix.pch";
+				INFOPLIST_FILE = "EPTerrain/EPTerrain-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2BC9DFA51923CB0700A67A6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EPTerrain/EPTerrain-Prefix.pch";
+				INFOPLIST_FILE = "EPTerrain/EPTerrain-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2BC9DFA71923CB0700A67A6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EPTerrain.app/EPTerrain";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EPTerrain/EPTerrain-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "EPTerrainTests/EPTerrainTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		2BC9DFA81923CB0700A67A6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EPTerrain.app/EPTerrain";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EPTerrain/EPTerrain-Prefix.pch";
+				INFOPLIST_FILE = "EPTerrainTests/EPTerrainTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2BC9DF691923CB0600A67A6E /* Build configuration list for PBXProject "EPTerrain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BC9DFA11923CB0700A67A6E /* Debug */,
+				2BC9DFA21923CB0700A67A6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BC9DFA31923CB0700A67A6E /* Build configuration list for PBXNativeTarget "EPTerrain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BC9DFA41923CB0700A67A6E /* Debug */,
+				2BC9DFA51923CB0700A67A6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2BC9DFA61923CB0700A67A6E /* Build configuration list for PBXNativeTarget "EPTerrainTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BC9DFA71923CB0700A67A6E /* Debug */,
+				2BC9DFA81923CB0700A67A6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2BC9DF661923CB0600A67A6E /* Project object */;
+}
