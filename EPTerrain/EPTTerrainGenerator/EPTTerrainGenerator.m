@@ -29,7 +29,7 @@
         _size = pow(2, detail) + 1;
         _map = malloc(sizeof(CGFloat) * _size * _size);
         _roughness = .7f;
-        _waterColor = [UIColor blueColor];
+        _waterColor = [UIColor colorWithRed:.2f green:.59f blue:.78f alpha:.15];
         srand48(time(0));
     }
     
