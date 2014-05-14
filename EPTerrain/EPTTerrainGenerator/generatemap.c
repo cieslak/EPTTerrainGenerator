@@ -11,6 +11,7 @@
 #include <math.h>
 #include <CoreGraphics/CoreGraphics.h>
 #include <objc/NSObjCRuntime.h>
+#include <time.h>
 
 NSInteger _max;
 NSInteger _size;
@@ -87,6 +88,11 @@ void divide(NSInteger size) {
 }
 
 void generatemap(CGFloat *map, NSInteger max, NSInteger size, CGFloat roughness) {
+#if EP_TIME_PROFILE
+    clock_t start, end;
+    double cpu_time_used;
+    start = clock();
+#endif
     _map = map;
     _max = max;
     _size = size;
@@ -98,6 +104,11 @@ void generatemap(CGFloat *map, NSInteger max, NSInteger size, CGFloat roughness)
     setmapvalue(0, _max, _max / 2);
     
     divide(_size);
+#if EP_TIME_PROFILE
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("map generated in %fs\n", cpu_time_used);
+#endif
 }
 
 void printmap() {

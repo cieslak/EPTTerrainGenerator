@@ -8,6 +8,7 @@
 
 #import "EPTTerrainGenerator.h"
 #include "generatemap.h"
+#import <time.h>
 @interface EPTTerrainGenerator ()
 
 @property (nonatomic, assign) CGFloat *map;
@@ -16,6 +17,8 @@
 @property (nonatomic, readonly) NSInteger max;
 
 @end
+
+static CGColorSpaceRef _colorSpace;
 
 @implementation EPTTerrainGenerator
 
@@ -30,6 +33,7 @@
         _map = malloc(sizeof(CGFloat) * _size * _size);
         _roughness = .7f;
         _waterColor = [UIColor colorWithRed:.2f green:.59f blue:.78f alpha:.15];
+        _colorSpace = CGColorSpaceCreateDeviceGray();
         srand48(time(0));
     }
     
@@ -38,6 +42,7 @@
 
 - (void)dealloc {
     free(_map);
+    CGColorSpaceRelease(_colorSpace);
 }
 
 #pragma mark - Generate terrain map
@@ -79,12 +84,16 @@ CGPoint project (CGFloat flatX, CGFloat flatY, CGFloat flatZ, NSInteger mapSize,
     return CGPointMake(x0 + x / y, y0 + z / y);
 }
 
-- (UIColor *)colorForX:(CGFloat)x y:(CGFloat)y slope:(CGFloat)slope {
-    if (ceilf(x) == self.max || ceilf(y) == self.max) {
-        return [UIColor blackColor];
+CGColorRef grayColor(CGFloat x, CGFloat y, CGFloat slope, CGFloat max) {
+    CGFloat gray;
+    if (ceilf(x) == max || ceilf(y) == max) {
+        gray = 0.0f;
+    } else {
+        gray = ((slope * 50) + 128) / 255.0f;
     }
-    CGFloat gray = (slope * 50) + 128;
-    return [UIColor colorWithWhite:gray/255.f alpha:1.0f];
+    CGFloat components[2] = {gray, 1.0f};
+    CGColorRef color = CGColorCreate(_colorSpace, components);
+    return color;
 }
 
 
@@ -92,7 +101,11 @@ CGPoint project (CGFloat flatX, CGFloat flatY, CGFloat flatZ, NSInteger mapSize,
     void (^blockCopy)(UIImage *image) = [completionBlock copy];
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
-        
+#if EP_TIME_PROFILE
+        clock_t start, end;
+        double cpu_time_used;
+        start = clock();
+#endif
         UIGraphicsBeginImageContextWithOptions(imageSize, YES, [[UIScreen mainScreen] scale]);
         CGContextRef ctx = UIGraphicsGetCurrentContext();
         UIImage *image = nil;
@@ -100,7 +113,7 @@ CGPoint project (CGFloat flatX, CGFloat flatY, CGFloat flatZ, NSInteger mapSize,
             CGFloat mapSize = self.size;
             CGFloat waterLevel = mapSize * .3f;
             for (NSInteger x = 0; x < mapSize; x++) {
-                for (NSInteger y = 0; y < mapSize; y ++) {
+                for (NSInteger y = 0; y < mapSize; y++) {
                     CGFloat value = mapvalue(x, y);
                     if (isnan(value)) {
                         value = -1;
@@ -113,12 +126,13 @@ CGPoint project (CGFloat flatX, CGFloat flatY, CGFloat flatZ, NSInteger mapSize,
                         slope = -1;
                     }
                     slope -= value;
-                    UIColor *color = [self colorForX:x y:y slope:slope];
                     CGRect rect = CGRectFromTopBottom(top, bottom);
-                    [color set];
+                    CGColorRef color = grayColor(x, y, slope, self.max);
+                    CGContextSetFillColorWithColor(ctx, color);
                     CGContextFillRect(ctx, rect);
+                    CGColorRelease(color);
                     rect = CGRectFromTopBottom(water, bottom);
-                    [self.waterColor set];
+                    [_waterColor set];
                     CGContextFillRect(ctx, rect);
                 }
             }
@@ -126,6 +140,11 @@ CGPoint project (CGFloat flatX, CGFloat flatY, CGFloat flatZ, NSInteger mapSize,
             image = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
         }
+#if EP_TIME_PROFILE
+        end = clock();
+        cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+        printf("image generated in %fs\n", cpu_time_used);
+#endif
         if (blockCopy) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 blockCopy(image);
