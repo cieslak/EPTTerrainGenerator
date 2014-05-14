@@ -47,19 +47,24 @@
 
 - (void)generateMap {
     [self.spinner startAnimating];
+    self.imageView.image = nil;
     __weak EPTTerrainGenerator *weakGenerator = self.generator;
     CGSize size = self.imageView.bounds.size;
     [self.generator generateTerrainMapWithCompletionBlock:^{
         [weakGenerator terrainImageWithSize:size completionBlock:^(UIImage *image) {
             [self.spinner stopAnimating];
             self.imageView.image = image;
-            self.spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
         }];
     }];
 }
 
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    self.imageView.image = nil;
+}
+
 -(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     [self.spinner startAnimating];
+    self.imageView.image = nil;
     CGSize size = self.imageView.bounds.size;
     [self.generator terrainImageWithSize:size completionBlock:^(UIImage *image) {
         [self.spinner stopAnimating];
