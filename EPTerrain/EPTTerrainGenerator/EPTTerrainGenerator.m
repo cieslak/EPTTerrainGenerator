@@ -161,7 +161,7 @@ CGColorRef grayColor(CGFloat x, CGFloat y, CGFloat slope, CGFloat max) {
 }
 
 - (void)setWaterColor:(UIColor *)waterColor {
-    _waterColor = _waterColor ?: [UIColor blueColor];
+    _waterColor = waterColor ?: [UIColor blueColor];
 }
 
 @end
