@@ -41,11 +41,7 @@
 - (IBAction)roughnessChanged:(id)sender {
     self.generator.roughness = [(UISlider *)sender value];
     [self.spinner startAnimating];
-    CGSize size = self.imageView.bounds.size;
-    [self.generator terrainImageWithSize:size completionBlock:^(UIImage *image) {
-        [self.spinner stopAnimating];
-        self.imageView.image = image;
-    }];
+    [self generateMap];
     
 }
 
