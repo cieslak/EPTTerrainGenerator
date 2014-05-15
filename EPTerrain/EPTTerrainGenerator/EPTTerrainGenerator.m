@@ -127,13 +127,17 @@ CGColorRef grayColor(CGFloat x, CGFloat y, CGFloat slope, CGFloat max) {
                     }
                     slope -= value;
                     CGRect rect = CGRectFromTopBottom(top, bottom);
-                    CGColorRef color = grayColor(x, y, slope, self.max);
-                    CGContextSetFillColorWithColor(ctx, color);
-                    CGContextFillRect(ctx, rect);
-                    CGColorRelease(color);
+                    if (!CGRectIsEmpty(rect)) {
+                        CGColorRef color = grayColor(x, y, slope, self.max);
+                        CGContextSetFillColorWithColor(ctx, color);
+                        CGContextFillRect(ctx, rect);
+                        CGColorRelease(color);
+                    }
                     rect = CGRectFromTopBottom(water, bottom);
-                    [_waterColor set];
-                    CGContextFillRect(ctx, rect);
+                    if (!CGRectIsEmpty(rect)) {
+                        [_waterColor set];
+                        CGContextFillRect(ctx, rect);
+                    }
                 }
             }
             
