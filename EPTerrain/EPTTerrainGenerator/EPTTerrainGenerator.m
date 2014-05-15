@@ -112,6 +112,7 @@ CGColorRef grayColor(CGFloat x, CGFloat y, CGFloat slope, CGFloat max) {
         if (ctx) {
             CGFloat mapSize = self.size;
             CGFloat waterLevel = mapSize * .3f;
+            CGRect bounds = CGRectMake(0.f, 0.f, imageSize.width, imageSize.height);
             for (NSInteger x = 0; x < mapSize; x++) {
                 for (NSInteger y = 0; y < mapSize; y++) {
                     CGFloat value = mapvalue(x, y);
@@ -127,16 +128,18 @@ CGColorRef grayColor(CGFloat x, CGFloat y, CGFloat slope, CGFloat max) {
                     }
                     slope -= value;
                     CGRect rect = CGRectFromTopBottom(top, bottom);
-                    if (!CGRectIsEmpty(rect)) {
+                    if (CGRectIntersectsRect(bounds, rect) && !CGRectIsEmpty(rect)) {
                         CGColorRef color = grayColor(x, y, slope, self.max);
                         CGContextSetFillColorWithColor(ctx, color);
                         CGContextFillRect(ctx, rect);
                         CGColorRelease(color);
+                        //NSLog(@"drew rect at %@", NSStringFromCGRect(rect));
                     }
                     rect = CGRectFromTopBottom(water, bottom);
-                    if (!CGRectIsEmpty(rect)) {
+                    if (CGRectIntersectsRect(bounds, rect) && !CGRectIsEmpty(rect)) {
                         [_waterColor set];
                         CGContextFillRect(ctx, rect);
+                        //NSLog(@"drew water rect at %@", NSStringFromCGRect(rect));
                     }
                 }
             }
