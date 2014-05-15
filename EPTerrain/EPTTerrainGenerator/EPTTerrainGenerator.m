@@ -133,13 +133,11 @@ CGColorRef grayColor(CGFloat x, CGFloat y, CGFloat slope, CGFloat max) {
                         CGContextSetFillColorWithColor(ctx, color);
                         CGContextFillRect(ctx, rect);
                         CGColorRelease(color);
-                        //NSLog(@"drew rect at %@", NSStringFromCGRect(rect));
                     }
                     rect = CGRectFromTopBottom(water, bottom);
                     if (CGRectIntersectsRect(bounds, rect) && !CGRectIsEmpty(rect)) {
                         [_waterColor set];
                         CGContextFillRect(ctx, rect);
-                        //NSLog(@"drew water rect at %@", NSStringFromCGRect(rect));
                     }
                 }
             }
